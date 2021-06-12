@@ -13,7 +13,7 @@ public class Manager : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.LeftShift))
         {
             ActivePlayerKazoo = !ActivePlayerKazoo;
             SetActivation();

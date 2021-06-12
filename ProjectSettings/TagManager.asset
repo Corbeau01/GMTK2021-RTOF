@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - personnage physique simulee
+  - Rope
   - Water
   - UI
   - PostPrecess
@@ -27,8 +27,8 @@ TagManager:
   - PlayingField
   - Player1Interaction
   - Player2Interaction
-  - 
-  - 
+  - Player1
+  - Player2
   - 
   - 
   - InFront
