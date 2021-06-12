@@ -25,11 +25,13 @@ public class Manager : MonoBehaviour
         {
             Kazzoo.GetComponent<PlayerController>().IsActivated = true;
             Aza.GetComponent<PlayerController>().IsActivated = false;
+            FindObjectOfType<CameraFollow>().ActivePlayer = Kazzoo.transform;
         }
         else
         {
             Aza.GetComponent<PlayerController>().IsActivated = true;
             Kazzoo.GetComponent<PlayerController>().IsActivated = false;
+            FindObjectOfType<CameraFollow>().ActivePlayer = Aza.transform;
         }
     }
 }
