@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
             if(collision.gameObject.layer==20)//20 = player 1wall //21player2 wall
             {
                 //colle
-                
+                this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
             }
         }
         if (this.gameObject.layer == 22)//22 player1 //23player2
