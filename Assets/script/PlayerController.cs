@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-
+ 
         if(gripWall) {
             findNormal();
         } else {
