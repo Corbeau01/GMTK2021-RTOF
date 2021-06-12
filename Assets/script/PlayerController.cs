@@ -5,11 +5,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-
+    public bool IsActivated = false;
     int JumpPower = 200;
     int speed = 1;
     void Update()
     {
+        if(!IsActivated)
+        {
+            return;
+        }
         if(Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.W))
         {
             this.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up*JumpPower);
