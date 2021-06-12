@@ -8,10 +8,12 @@ public class SfxManager : MonoBehaviour
     public AudioClip[] SFX;
 
     public AudioClip BruitDePas;
+    public AudioClip BruitDeCourse;
     public AudioClip Jump;
     public AudioClip Atterrissage;
     public AudioClip QuandOnSaccroche;
     public AudioClip MortDuPerso;
+    public AudioClip EnTrainDeTomber;
 
     public void PlaySFXBruitDePas()
     {
@@ -50,6 +52,22 @@ public class SfxManager : MonoBehaviour
         if (MortDuPerso != null)
         {
             SfxSource.PlayOneShot(MortDuPerso);
+        }
+
+    }
+    public void PlaySFXBruitDeCourse()
+    {
+        if (MortDuPerso != null)
+        {
+            SfxSource.PlayOneShot(BruitDeCourse);
+        }
+
+    }
+    public void PlaySFXEnTrainDeTomber()
+    {
+        if (MortDuPerso != null)
+        {
+            SfxSource.PlayOneShot(EnTrainDeTomber);
         }
 
     }
