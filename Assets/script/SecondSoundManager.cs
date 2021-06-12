@@ -16,8 +16,7 @@ public class SecondSoundManager : MonoBehaviour
     public AudioClip[] Songs;
 
 
-    public AudioSource SfxSource;
-    public AudioClip[] SFX;
+    
 
     bool Fade1=true;
     bool Fade2;
