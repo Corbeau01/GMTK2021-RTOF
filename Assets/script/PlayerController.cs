@@ -29,4 +29,25 @@ public class PlayerController : MonoBehaviour
             this.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right * speed);
         }
     }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(this.gameObject.layer==22)//22 player1 //23player2
+        {
+            if(collision.gameObject.layer==20)//20 = player 1wall //21player2 wall
+            {
+                //colle
+                this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+                this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            }
+        }
+        if (this.gameObject.layer == 22)//22 player1 //23player2
+        {
+            if (collision.gameObject.layer == 20)//20 = player 1wall //21player2 wall
+            {
+                //colle
+            }
+        }
+    }
 }
