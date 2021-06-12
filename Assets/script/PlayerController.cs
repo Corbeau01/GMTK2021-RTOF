@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     void Start() {
         body = this.gameObject.GetComponent<Rigidbody2D>();
-        anim = this.gameObject.GetComponent<Animator>(); 
+        anim = this.gameObject.GetComponent<Animator>();
     }
 
     void Update()
