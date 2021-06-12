@@ -13,13 +13,45 @@ public class SfxManager : MonoBehaviour
     public AudioClip QuandOnSaccroche;
     public AudioClip MortDuPerso;
 
-    void PlaySFX(AudioClip Sound)
+    public void PlaySFXBruitDePas()
     {
-        if(Sound!=null)
+        if(BruitDePas!=null)
         {
-            SfxSource.PlayOneShot(Sound);
-        }    
+            SfxSource.PlayOneShot(BruitDePas);
+        }
         
+    }
+    public void PlaySFXJump()
+    {
+        if (Jump != null)
+        {
+            SfxSource.PlayOneShot(Jump);
+        }
+
+    }
+    public void PlaySFXAtterrissage()
+    {
+        if (Atterrissage != null)
+        {
+            SfxSource.PlayOneShot(Atterrissage);
+        }
+
+    }
+    public void PlaySFXQuandOnSaccroche()
+    {
+        if (QuandOnSaccroche != null)
+        {
+            SfxSource.PlayOneShot(QuandOnSaccroche);
+        }
+
+    }
+    public void PlaySFXMortDuPerso()
+    {
+        if (MortDuPerso != null)
+        {
+            SfxSource.PlayOneShot(MortDuPerso);
+        }
+
     }
 }
 /*
