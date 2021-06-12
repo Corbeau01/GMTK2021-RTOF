@@ -19,25 +19,37 @@ TagManager:
   - 
   - 
   - 
+  - BackgroundLast
+  - Background2
+  - Background1
+  - 
+  - 
+  - PlayingField
+  - Player1Interaction
+  - Player2Interaction
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - InFront
   - 
   - 
   - 
   - 
   - 
   m_SortingLayers:
+  - name: BackgroundLast
+    uniqueID: 2522090527
+    locked: 0
+  - name: Background2
+    uniqueID: 1869337829
+    locked: 0
+  - name: Background1
+    uniqueID: 4143298777
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: InFront
+    uniqueID: 1107662671
     locked: 0
