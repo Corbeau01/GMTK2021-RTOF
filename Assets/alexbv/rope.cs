@@ -45,11 +45,11 @@ public GameObject otherPlayer;
     void Update()
     {
 
-                if(Input.GetKey(KeyCode.UpArrow)) {
+                if(Input.GetKey(KeyCode.DownArrow)) {
                     jointLength -= 0.0005f;
                 }
 
-                if(Input.GetKey(KeyCode.DownArrow)) {
+                if(Input.GetKey(KeyCode.UpArrow)) {
                     jointLength += 0.0005f;
                 }
 
