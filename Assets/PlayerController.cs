@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+
+    int JumpPower = 200;
+    int speed = 1;
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.W))
+        {
+            this.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up*JumpPower);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            this.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right*-1 * speed);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            this.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.right * speed);
+        }
     }
 }
