@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if(body.IsTouchingLayers( LayerMask.GetMask("Default"))) { 
+        if(body.IsTouchingLayers( LayerMask.GetMask("PlayingField"))) { 
             //body.mass = 100f;
             canJump = true;
             } else {
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
         }
         
 
-        if(Input.GetKeyDown(KeyCode.W) && canJump) //Input.GetKeyDown(KeyCode.Space)|| 
+        if(Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.Space) && canJump) //Input.GetKeyDown(KeyCode.Space)|| 
         {
             //this.GetComponent<Animator>().SetInteger("State", 1);
             body.AddForce(transform.up*JumpPower);
@@ -72,8 +72,7 @@ public class PlayerController : MonoBehaviour
             if(collision.gameObject.layer==20)//20 = player 1wall //21player2 wall
             {
                 //colle
-                this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
-                this.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                
             }
         }
         if (this.gameObject.layer == 22)//22 player1 //23player2
