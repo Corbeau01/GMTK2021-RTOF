@@ -27,33 +27,41 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
+
+
         if(body.IsTouchingLayers( LayerMask.GetMask("PlayingField"))) { 
-            //body.mass = 100f;
+
             canJump = true;
             gripWall = false;
             } else {
-            //body.mass = 20f;
-            canJump = false;
+            canJump = false; //faux
             gripWall = false;
         }
 
-        if( (player1 && body.IsTouchingLayers(LayerMask.GetMask("Player1Interaction"))) || (!player1 && body.IsTouchingLayers(LayerMask.GetMask("Player1Interaction"))) ) { 
+
+        if( player1 == true && body.IsTouchingLayers(LayerMask.GetMask("Player1Interaction"))) { 
             gripWall = true;
-            canJump = false;
+            canJump = true;
+        }
+
+        if( player1 == false && body.IsTouchingLayers(LayerMask.GetMask("Player2Interaction"))) { 
+            gripWall = true;
+            canJump = true;
         }
 
 
 
- 
+
         if(gripWall) {
             findNormal();
+            Debug.Log("test");
         } else {
             groundNormal = new Vector2(0,1);
         }
 
+
         Debug.DrawLine(transform.position, transform.position+(Vector3)groundNormal);
-        Debug.Log(groundNormal);
-        body.AddForce(groundNormal * Physics2D.gravity[1]);
+        body.AddForce(groundNormal * Physics2D.gravity[1] * body.mass);
 
 
 
@@ -113,26 +121,6 @@ public class PlayerController : MonoBehaviour
 
 
 
-
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(this.gameObject.layer==22)//22 player1 //23player2
-        {
-            if(collision.gameObject.layer==20)//20 = player 1wall //21player2 wall
-            {
-                //colle
-                this.gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
-            }
-        }
-        if (this.gameObject.layer == 22)//22 player1 //23player2
-        {
-            if (collision.gameObject.layer == 20)//20 = player 1wall //21player2 wall
-            {
-                //colle
-            }
-        }
-    }
 
 
     public static Vector2 rotate(Vector2 v, float angle) {
