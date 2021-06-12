@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.W))
         {
+            this.GetComponent<Animator>().SetInteger("State", 1);
             this.gameObject.GetComponent<Rigidbody2D>().AddForce(transform.up*JumpPower);
         }
         if (Input.GetKey(KeyCode.A))
