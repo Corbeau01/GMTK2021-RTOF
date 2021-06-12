@@ -50,6 +50,7 @@ public class setRope : MonoBehaviour
         }
         else
         {
+            
             Folower.gameObject.GetComponent<Rigidbody2D>().AddForce(Leader.position * Force);
             IsClose = false;
         }
