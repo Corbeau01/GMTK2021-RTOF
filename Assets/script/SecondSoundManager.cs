@@ -52,13 +52,13 @@ public class SecondSoundManager : MonoBehaviour
             firstSongIsPlaying = true;
             secSongIsPlaying = false;
         }
-        
-        if(Source1.volume<1)
+
+        if (Source1.volume < 0.3f)
         {
             T += Time.deltaTime;
-            if (T >= 1)
+            if (T >= 0.1f)
             {
-                Source1.volume += 0.1f;
+                Source1.volume += 0.01f;
                 T = 0;
             }
         }
@@ -82,9 +82,9 @@ public class SecondSoundManager : MonoBehaviour
         if (Source1.volume > 0.00f)
         {
             T1 += Time.deltaTime;
-            if (T1 >= 1)
+            if (T1 >= 0.1f)
             {
-                Source1.volume -= 0.1f;
+                Source1.volume -= 0.01f;
                 T1 = 0;
             }
         }
@@ -106,12 +106,12 @@ public class SecondSoundManager : MonoBehaviour
 
         }
 
-        if (Source2.volume < 1)
+        if (Source2.volume < 0.3f)
         {
             T2 += Time.deltaTime;
-            if (T2 >= 1)
+            if (T2 >= 0.1f)
             {
-                Source2.volume += 0.1f;
+                Source2.volume += 0.01f;
                 T2 = 0;
             }
         }
@@ -133,9 +133,9 @@ public class SecondSoundManager : MonoBehaviour
         if (Source2.volume >0.00f)
         {
             T22 += Time.deltaTime;
-            if (T22 >= 1)
+            if (T22 >= 0.1f)
             {
-                Source2.volume -= 0.1f;
+                Source2.volume -= 0.01f;
                 T22= 0;
             }
         }
