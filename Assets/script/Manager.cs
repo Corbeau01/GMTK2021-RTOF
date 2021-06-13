@@ -9,12 +9,19 @@ public class Manager : MonoBehaviour
     public GameObject Aza;
     public Transform StartPosition;
     bool ISResetingPositions;
+    public GameObject MenuGo;
+    bool Menustatre = false;
     private void Start()
     {
         SetActivation();
     }
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Menustatre = !Menustatre;
+            MenuGo.SetActive(Menustatre);
+        }
         CheckForDeath();
         if(Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.LeftShift))
         {
