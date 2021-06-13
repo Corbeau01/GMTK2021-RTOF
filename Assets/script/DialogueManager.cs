@@ -11,6 +11,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
 	Queue<Dialogue> _dialogueQueue = new Queue<Dialogue>();
 	bool IsInDialogue;
+	public float DialogueMinTime;
 
 	public enum Dialogue { D1, D2, D3, D4, D5, D6, D7, D8, D9, D10, D11, D12 }
 	// -------------------------------------------
@@ -18,7 +19,6 @@ public class DialogueManager : Singleton<DialogueManager>
 	private void Start()
 	{
 		StartDialogue(Dialogue.D1);
-		StartDialogue(Dialogue.D2);
 	}
 
 	private void Update()
@@ -41,10 +41,22 @@ public class DialogueManager : Singleton<DialogueManager>
 	private IEnumerator DoDialogue(DialogueData dialogueData)
 	{
 		IsInDialogue = true;
-		yield return null;
-		print("Je fais " + dialogueData.Bubbles.Length);
 
-		yield return null;
+		foreach (var item in dialogueData.Bubbles)
+		{
+			float t = 0;
+			item.SetActive(true);
+			var sound = item.GetComponent<AudioSource>();
+
+			while ((dialogueData.AnyKeyToContinue && !Input.anyKeyDown) || (!dialogueData.AnyKeyToContinue && t < DialogueMinTime))
+			{
+				yield return null;
+				t += Time.deltaTime;
+			}
+			yield return null;
+
+			item.SetActive(false);
+		}
 		IsInDialogue = false;
 
 	}
