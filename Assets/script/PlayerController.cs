@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public bool IsActivated = false;
     public bool player1;
 
-    int JumpPower = 80000;
+    int JumpPower = 160000;
     int acceleration = 3000;
     float maxSpeed = 8f;
     Rigidbody2D body;

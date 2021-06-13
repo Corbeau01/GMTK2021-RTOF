@@ -18,6 +18,7 @@ public class DeathTrigger : MonoBehaviour
             print(this.GetComponent<Rigidbody2D>().velocity.y );
             if(this.GetComponent<Rigidbody2D>().velocity.y<-30)
             {
+                
                 Death = true;
                 YouFellTooFastBanner.SetActive(true);
                 YouFellTooFastBanner.GetComponent<FadeOut>().Frac = 0f;
@@ -26,6 +27,10 @@ public class DeathTrigger : MonoBehaviour
             {
                 Destroy(collision.gameObject);
             }
+        }
+        if(collision.tag=="CheckPoint")
+        {
+            FindObjectOfType<Manager>().StartPosition = collision.gameObject.transform;
         }
 
     }
