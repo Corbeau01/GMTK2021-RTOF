@@ -19,6 +19,10 @@ public class DeathTrigger : MonoBehaviour
             {
                 Death = true;
             }
+            else
+            {
+                Destroy(collision.gameObject);
+            }
         }
 
     }
