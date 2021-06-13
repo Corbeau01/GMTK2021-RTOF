@@ -46,11 +46,11 @@ public GameObject otherPlayer;
     {
 
                 if(Input.GetKey(KeyCode.DownArrow)) {
-                    jointLength -= 0.0005f;
+                    jointLength -= 0.001f;
                 }
 
                 if(Input.GetKey(KeyCode.UpArrow)) {
-                    jointLength += 0.0005f;
+                    jointLength += 0.001f;
                 }
 
                 if(jointLength < minLength) {
