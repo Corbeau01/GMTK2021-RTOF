@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Manager : MonoBehaviour
 {
     public bool ActivePlayerKazoo = true;
@@ -17,6 +17,10 @@ public class Manager : MonoBehaviour
     }
     private void Update()
     {
+        if(Input.GetKey(KeyCode.F1))
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             Menustatre = !Menustatre;

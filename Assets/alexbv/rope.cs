@@ -79,10 +79,11 @@ public GameObject otherPlayer;
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F1))
+        if(Input.GetKeyDown(KeyCode.R))
         {
-            
+            ResetRope();
         }
+       
                 if(Input.GetKey(KeyCode.DownArrow)) {
                     jointLength -= 0.001f;
                 }
