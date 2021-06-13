@@ -28,6 +28,10 @@ public class DeathTrigger : MonoBehaviour
                 Destroy(collision.gameObject);
             }
         }
+        if(collision.tag=="CheckPoint")
+        {
+            FindObjectOfType<Manager>().StartPosition = collision.gameObject.transform;
+        }
 
     }
     private void OnTriggerExit2D(Collider2D collision)
