@@ -9,6 +9,7 @@ public class animation : MonoBehaviour
     Animator anim;
     SfxManager sfxm;
     int animState = 0;
+    bool IsTouchingWall = false;
     // 0 = idle, 1 = walking, 2 = running, 3 = jump, 4 = fall, 5 = landing, 6 = collide 
 
     bool CurrentDir = false;
@@ -42,6 +43,7 @@ public class animation : MonoBehaviour
     public void setJump()
     {
         animState = 3;
+        
     }
 
     public void setFall()
@@ -101,6 +103,7 @@ public class animation : MonoBehaviour
         /*if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
         {
             setJump();
+           
             //sfxm.PlaySFXJump();
         }*/
         if(rb.velocity.y < -0.1)
@@ -115,6 +118,38 @@ public class animation : MonoBehaviour
         if (anim != null)
         {
             anim.SetInteger("state", animState);
+        }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.layer==20)
+        {
+            IsTouchingWall = true;
+        }
+    }
+    private void OnCollisionStay2D(Collision collision)
+    {
+        if (collision.gameObject.layer == 19)
+        {
+            IsTouchingWall = false;
+        }
+    }
+    void CheckForClimb()
+    {
+        if(IsTouchingWall)
+        {
+            if(this.GetComponent<Rigidbody2D>().velocity.y==0)
+            {
+                //immobile
+            }
+            if (this.GetComponent<Rigidbody2D>().velocity.y > 0)
+            {
+                //Going up
+            }
+            if (this.GetComponent<Rigidbody2D>().velocity.y < 0)
+            {
+                //Going Down
+            }
         }
     }
 }
