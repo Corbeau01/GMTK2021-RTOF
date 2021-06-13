@@ -100,12 +100,12 @@ public class animation : MonoBehaviour
             setRun();
             //sfxm.PlaySFXBruitDeCourse();
         }
-        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
+        /*if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
         {
             setJump();
            
             //sfxm.PlaySFXJump();
-        }
+        }*/
         if(rb.velocity.y < -0.1)
         {
             setFall();
