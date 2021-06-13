@@ -55,7 +55,7 @@ public class Manager : MonoBehaviour
             ISResetingPositions = true;
             
         }
-        if (Kazzoo.GetComponent<DeathTrigger>().Death|| Aza.GetComponent<DeathTrigger>().Death)
+        if (Kazzoo.GetComponent<DeathTrigger>().Death)
         {
             ISResetingPositions = true;
         }

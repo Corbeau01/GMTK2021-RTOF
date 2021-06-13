@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
     
     public Transform ActivePlayer;
-    Vector3 offset = new Vector3(-2.35f, 6.13f, -33.5f);
+    Vector3 offset = new Vector3(-2.35f, 4.13f, -33.5f);
     public float ActivationDistance = 10;
     public float smoothTime = 0.3F;
     private Vector3 velocity = Vector3.zero;
