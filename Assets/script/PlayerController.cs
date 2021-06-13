@@ -27,7 +27,26 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
+        if(gripWall)
+        {
+            if(IsActivated==false)
+            {
+                this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezePositionY| RigidbodyConstraints2D.FreezeRotation; 
+               // this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
 
+                // m_Rigidbody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ;
+            }
+            else
+            {
+                this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+                this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
+        }
+        else
+        {
+            this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            this.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        }
 
         if(body.IsTouchingLayers( LayerMask.GetMask("PlayingField"))) {  //,"Player1Interaction","Player2Interaction"
             canJump = true;

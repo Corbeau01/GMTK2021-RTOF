@@ -38,7 +38,10 @@ public GameObject otherPlayer;
             otherPlayer.GetComponent<SpringJoint2D>().connectedBody = previous.GetComponent<Rigidbody2D>();
             otherPlayer.GetComponent<SpringJoint2D>().distance = jointLength;
 
-        
+        foreach (SpringJoint2D go in allJoints)
+        {
+            go.gameObject.transform.position += new Vector3(0, 0, -1);
+        }
     }
     public void ResetRope()
     {
@@ -67,6 +70,11 @@ public GameObject otherPlayer;
 
         otherPlayer.GetComponent<SpringJoint2D>().connectedBody = previous.GetComponent<Rigidbody2D>();
         otherPlayer.GetComponent<SpringJoint2D>().distance = jointLength;
+
+        foreach (SpringJoint2D go in allJoints)
+        {
+            go.gameObject.transform.position += new Vector3(0, 0, -1);
+        }
     }
     // Update is called once per frame
     void Update()
