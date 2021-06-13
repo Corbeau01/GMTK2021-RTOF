@@ -6,6 +6,7 @@ public class DeathTrigger : MonoBehaviour
 {
     public bool InDeadZone;
     public bool Death;
+    public GameObject YouFellTooFastBanner;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag=="Death")
@@ -18,6 +19,8 @@ public class DeathTrigger : MonoBehaviour
             if(this.GetComponent<Rigidbody2D>().velocity.y<-30)
             {
                 Death = true;
+                YouFellTooFastBanner.SetActive(true);
+                YouFellTooFastBanner.GetComponent<FadeOut>().Frac = 0f;
             }
             else
             {
