@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
         if(gripWall) {
             findNormal();
-            Debug.Log("test");
+          
         } else {
             groundNormal = new Vector2(0,1);
         }

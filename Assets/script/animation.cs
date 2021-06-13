@@ -77,7 +77,7 @@ public class animation : MonoBehaviour
             sfxm.PlaySFXEnTrainDeTomber();
         }
         
-        anim.SetInteger("state", animState); 
+       // anim.SetInteger("state", animState); 
     }
 }
 
