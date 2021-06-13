@@ -31,6 +31,7 @@ public class DialogueManager : MonoBehaviour
     }
     private void Update()
     {
+        return;
         if(bulles1Increment<Bulles1.Length-1)
         {
             if (Input.anyKeyDown)

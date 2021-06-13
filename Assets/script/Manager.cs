@@ -29,6 +29,8 @@ public class Manager : MonoBehaviour
             Kazzoo.GetComponent<DeathTrigger>().InDeadZone = false;
             Aza.GetComponent<DeathTrigger>().InDeadZone = false;
             ISResetingPositions = false;
+            Kazzoo.GetComponent<DeathTrigger>().Death = false;
+            Aza.GetComponent<DeathTrigger>().Death = false;
         }
     }
     void SetActivation()
@@ -52,6 +54,10 @@ public class Manager : MonoBehaviour
         {
             ISResetingPositions = true;
             
+        }
+        if (Kazzoo.GetComponent<DeathTrigger>().Death|| Aza.GetComponent<DeathTrigger>().Death)
+        {
+            ISResetingPositions = true;
         }
     }
 }
