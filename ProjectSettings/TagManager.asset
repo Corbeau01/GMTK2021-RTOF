@@ -9,6 +9,7 @@ TagManager:
   - bulle4
   - Death
   - FallDeath
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
