@@ -164,8 +164,8 @@ LineRenderer:
   m_GameObject: {fileID: 4121032162171403580}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 0
   m_LightProbeUsage: 0
@@ -175,7 +175,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 77e2e9ca275a7e64d9a632445f14d5b4, type: 2}
+  - {fileID: 2100000, guid: cd90171d39969a2448559fca80d28e27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

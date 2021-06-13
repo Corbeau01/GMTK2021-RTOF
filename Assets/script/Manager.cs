@@ -7,6 +7,8 @@ public class Manager : MonoBehaviour
     public bool ActivePlayerKazoo = true;
     public GameObject Kazzoo;
     public GameObject Aza;
+    public GameObject KazzooFX;
+    public GameObject AzaFX;
     public Transform StartPosition;
     bool ISResetingPositions;
     public GameObject MenuGo;
@@ -51,12 +53,16 @@ public class Manager : MonoBehaviour
             Kazzoo.GetComponent<PlayerController>().IsActivated = true;
             Aza.GetComponent<PlayerController>().IsActivated = false;
             FindObjectOfType<CameraFollow>().ActivePlayer = Kazzoo.transform;
+            KazzooFX.SetActive(true);
+            AzaFX.SetActive(false);
         }
         else
         {
             Aza.GetComponent<PlayerController>().IsActivated = true;
             Kazzoo.GetComponent<PlayerController>().IsActivated = false;
             FindObjectOfType<CameraFollow>().ActivePlayer = Aza.transform;
+            AzaFX.SetActive(true);
+            KazzooFX.SetActive(false);
         }
     }
     void CheckForDeath()
