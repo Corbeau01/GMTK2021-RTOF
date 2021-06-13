@@ -14,7 +14,15 @@ public class SfxManager : MonoBehaviour
     public AudioClip QuandOnSaccroche;
     public AudioClip MortDuPerso;
     public AudioClip EnTrainDeTomber;
+    public AudioClip SonKazoo;
+    public void PlaySFXKazzo()
+    {
+        if (BruitDePas != null)
+        {
+            SfxSource.PlayOneShot(SonKazoo);
+        }
 
+    }
     public void PlaySFXBruitDePas()
     {
         if(BruitDePas!=null)
