@@ -5,18 +5,23 @@ using UnityEngine;
 public class animation : MonoBehaviour
 {
 
+    Rigidbody2D rb; 
     Animator anim;
     SfxManager sfxm;
     int animState = 0;
     // 0 = idle, 1 = walking, 2 = running, 3 = jump, 4 = fall, 5 = landing, 6 = collide 
+
+    bool CurrentDir = false;
+    // false = forward, true = back
 
     // Start is called before the first frame update
 
 
     void Start()
     {
-        sfxm = FindObjectOfType<SfxManager>();
+        //sfxm = FindObjectOfType<SfxManager>();
         anim = this.gameObject.GetComponent<Animator>();
+        rb = this.gameObject.GetComponent<Rigidbody2D>();
     }
 
     public void setIdle() 
@@ -56,27 +61,58 @@ public class animation : MonoBehaviour
 
     private void Update()
     {
-        if(GetComponent<Rigidbody2D>().velocity.x>0&& GetComponent<Rigidbody2D>().velocity.x<4)
+
+        //set direction of player
+
+        if(Input.GetKey(KeyCode.A) && (CurrentDir == true))
+        {
+            Vector3 reverseScale = this.gameObject.transform.localScale;
+            reverseScale.x = Mathf.Abs(reverseScale.x) * -1;
+            this.gameObject.transform.localScale = reverseScale;
+
+            Vector3 reversePosition = this.gameObject.transform.position;
+            reversePosition.x += 0.4f;
+            this.gameObject.transform.position = reversePosition;
+            CurrentDir = false;
+        }
+        if (Input.GetKey(KeyCode.D) && (CurrentDir == false))
+        {
+            Vector3 forwardScale = this.gameObject.transform.localScale;
+            forwardScale.x = Mathf.Abs(forwardScale.x);
+            this.gameObject.transform.localScale = forwardScale;
+
+            Vector3 forwardPosition = this.gameObject.transform.position;
+            forwardPosition.x -= 0.4f;
+            this.gameObject.transform.position = forwardPosition;
+
+            CurrentDir = true; 
+        }
+
+        if (rb.velocity.x>0.1 || rb.velocity.x < -0.1)
         {
             setWalk();
-            sfxm.PlaySFXBruitDePas();
+            //sfxm.PlaySFXBruitDePas();
         }
-        if (GetComponent<Rigidbody2D>().velocity.x > 4)
+        if (rb.velocity.x > 3 || rb.velocity.x < -3)
         {
             setRun();
-            sfxm.PlaySFXBruitDeCourse();
+            //sfxm.PlaySFXBruitDeCourse();
         }
-        if(Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.Space))
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
         {
             setJump();
-            sfxm.PlaySFXJump();
+            //sfxm.PlaySFXJump();
         }
-        if(GetComponent<Rigidbody2D>().velocity.y<0)
+        if(rb.velocity.y < -0.1)
         {
             setFall();
-            sfxm.PlaySFXEnTrainDeTomber();
+            //sfxm.PlaySFXEnTrainDeTomber();
         }
-        
+        if(rb.velocity.magnitude<0.1)
+        {
+            setIdle(); 
+        }
+
         anim.SetInteger("state", animState); 
     }
 }

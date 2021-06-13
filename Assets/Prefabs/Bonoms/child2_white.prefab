@@ -1020,7 +1020,7 @@ GameObject:
   - component: {fileID: 7732401028283899185}
   - component: {fileID: 7732401028283899187}
   m_Layer: 0
-  m_Name: child2
+  m_Name: child2_white
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
