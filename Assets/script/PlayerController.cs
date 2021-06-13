@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
     public bool IsActivated = false;
     public bool player1;
 
-    int JumpPower = 6000;
-    int acceleration = 150;
+    int JumpPower = 80000;
+    int acceleration = 3000;
     float maxSpeed = 8f;
     Rigidbody2D body;
     bool canJump;
@@ -29,24 +29,23 @@ public class PlayerController : MonoBehaviour
 
 
 
-        if(body.IsTouchingLayers( LayerMask.GetMask("PlayingField"))) { 
-
+        if(body.IsTouchingLayers( LayerMask.GetMask("PlayingField"))) {  //,"Player1Interaction","Player2Interaction"
             canJump = true;
-            gripWall = false;
+
             } else {
-            canJump = false; //faux
+            canJump = false;
             gripWall = false;
         }
 
 
         if( player1 == true && body.IsTouchingLayers(LayerMask.GetMask("Player1Interaction"))) { 
             gripWall = true;
-            canJump = true;
+            //canJump = true;
         }
 
         if( player1 == false && body.IsTouchingLayers(LayerMask.GetMask("Player2Interaction"))) { 
             gripWall = true;
-            canJump = true;
+            //canJump = true;
         }
 
 
@@ -67,10 +66,10 @@ public class PlayerController : MonoBehaviour
 
         if(!IsActivated)
         {   
-            body.mass = 50f;
+            body.mass = 1f;
             return;
         } else {
-            body.mass = 1f;
+            body.mass = 30f;
         }
         
 
