@@ -10,7 +10,8 @@ public class animation : MonoBehaviour
     SfxManager sfxm;
     int animState = 0;
     bool IsTouchingWall = false;
-    // 0 = idle, 1 = walking, 2 = running, 3 = jump, 4 = fall, 5 = landing, 6 = collide 
+    // 0 = idle, 1 = walking, 2 = running, 3 = jump, 4 = fall, 5 = landing, 6 = collide
+    // 7 = climb_idle, 8 = climb_up, 9 = climb_down
 
     bool CurrentDir = false;
     // false = forward, true = back
@@ -55,10 +56,21 @@ public class animation : MonoBehaviour
     {
         animState = 5;
     }
-
     public void setCollide()
     {
-        animState = 6; 
+        animState = 6;
+    }
+    public void setClimbIdle()
+    {
+        animState = 7; 
+    }
+    public void setClimbUp()
+    {
+        animState = 8; 
+    }
+    public void setClimbDown()
+    {
+        animState = 9; 
     }
 
     private void Update()
@@ -73,7 +85,7 @@ public class animation : MonoBehaviour
             this.gameObject.transform.localScale = reverseScale;
 
             Vector3 reversePosition = this.gameObject.transform.position;
-            reversePosition.x += 0.4f;
+            reversePosition.x += 0.5f;
             this.gameObject.transform.position = reversePosition;
             CurrentDir = false;
         }
@@ -84,28 +96,28 @@ public class animation : MonoBehaviour
             this.gameObject.transform.localScale = forwardScale;
 
             Vector3 forwardPosition = this.gameObject.transform.position;
-            forwardPosition.x -= 0.4f;
+            forwardPosition.x -= 0.5f;
             this.gameObject.transform.position = forwardPosition;
 
             CurrentDir = true; 
         }
 
-        if (rb.velocity.x>0.1 || rb.velocity.x < -0.1)
+        if (rb.velocity.x>0.01 || rb.velocity.x < -0.01)
         {
             setWalk();
             //sfxm.PlaySFXBruitDePas();
         }
-        if (rb.velocity.x > 3 || rb.velocity.x < -3)
+        if (rb.velocity.x > 2 || rb.velocity.x < -2)
         {
             setRun();
             //sfxm.PlaySFXBruitDeCourse();
         }
-        /*if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
         {
             setJump();
            
             //sfxm.PlaySFXJump();
-        }*/
+        }
         if(rb.velocity.y < -0.1)
         {
             setFall();
@@ -140,15 +152,15 @@ public class animation : MonoBehaviour
         {
             if(this.GetComponent<Rigidbody2D>().velocity.y==0)
             {
-                //immobile
+                setClimbIdle();  
             }
             if (this.GetComponent<Rigidbody2D>().velocity.y > 0)
             {
-                //Going up
+                setClimbUp(); 
             }
             if (this.GetComponent<Rigidbody2D>().velocity.y < 0)
             {
-                //Going Down
+                setClimbDown(); 
             }
         }
     }
