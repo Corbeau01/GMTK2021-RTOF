@@ -31,6 +31,7 @@ public class DialogueManager : MonoBehaviour
     }
     private void Update()
     {
+        return;
         if(bulles1Increment<Bulles1.Length-1)
         {
             if (Input.anyKeyDown)
@@ -47,38 +48,38 @@ public class DialogueManager : MonoBehaviour
         if(Bulle2Trigger&&!Bulle2HasTrigger)
         {
             
-            Bulle2Go.SetActive(true);
+            Bulle2Go?.SetActive(true);
             TimerBulle2 += Time.deltaTime;
         }
         if(TimerBulle2>5f)
         {
             Bulle2HasTrigger = true;
             TimerBulle2 = 0;
-            Bulle2Go.SetActive(false);
+            Bulle2Go?.SetActive(false);
         }
         if (Bulle3Trigger && !Bulle3HasTrigger)
         {
 
-            Bulle3Go.SetActive(true);
+            Bulle3Go?.SetActive(true);
             TimerBulle3 += Time.deltaTime;
         }
         if (TimerBulle3 > 5f)
         {
             Bulle3HasTrigger = true;
             TimerBulle3 = 0;
-            Bulle3Go.SetActive(false);
+            Bulle3Go?.SetActive(false);
         }
         if (Bulle4Trigger && !Bulle4HasTrigger)
         {
 
-            Bulle4Go.SetActive(true);
+            Bulle4Go?.SetActive(true);
             TimerBulle4 += Time.deltaTime;
         }
         if (TimerBulle4 > 5f)
         {
             Bulle4HasTrigger = true;
             TimerBulle4 = 0;
-            Bulle4Go.SetActive(false);
+            Bulle4Go?.SetActive(false);
         }
     }
 }

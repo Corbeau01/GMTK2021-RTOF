@@ -112,8 +112,10 @@ public class animation : MonoBehaviour
         {
             setIdle(); 
         }
-
-        anim.SetInteger("state", animState); 
+        if (anim != null)
+        {
+            anim.SetInteger("state", animState);
+        }
     }
 }
 

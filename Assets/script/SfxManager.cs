@@ -27,7 +27,7 @@ public class SfxManager : MonoBehaviour
     {
         if (Jump != null)
         {
-            SfxSource.PlayOneShot(Jump);
+           // SfxSource.PlayOneShot(Jump);
         }
 
     }
@@ -59,7 +59,7 @@ public class SfxManager : MonoBehaviour
     {
         if (MortDuPerso != null)
         {
-            SfxSource.PlayOneShot(BruitDeCourse);
+           // SfxSource.PlayOneShot(BruitDeCourse);
         }
 
     }
@@ -67,7 +67,7 @@ public class SfxManager : MonoBehaviour
     {
         if (MortDuPerso != null)
         {
-            SfxSource.PlayOneShot(EnTrainDeTomber);
+          //  SfxSource.PlayOneShot(EnTrainDeTomber);
         }
 
     }

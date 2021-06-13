@@ -7,6 +7,8 @@ TagManager:
   - Bulle2
   - bulle3
   - bulle4
+  - Death
+  - FallDeath
   layers:
   - Default
   - TransparentFX
