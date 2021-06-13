@@ -15,7 +15,7 @@ public class DeathTrigger : MonoBehaviour
         if (collision.tag == "FallDeath")
         {
             print(this.GetComponent<Rigidbody2D>().velocity.y );
-            if(this.GetComponent<Rigidbody2D>().velocity.y<-20)
+            if(this.GetComponent<Rigidbody2D>().velocity.y<-30)
             {
                 Death = true;
             }
