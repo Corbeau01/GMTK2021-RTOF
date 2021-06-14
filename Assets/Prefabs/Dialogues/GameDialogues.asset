@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f225b3185a32fe48ac0b1b251d1a5c4, type: 3}
+  m_Name: GameDialogues
+  m_EditorClassIdentifier: 
+  Dialogues:
+  - Lines:
+    - Bubble: {fileID: 21300000, guid: 64793ee46dee1d9439588ec1b8f04159, type: 3}
+      Clip: {fileID: 8300000, guid: 462fe6dd5346174458f5601e38fbf185, type: 3}
+    - Bubble: {fileID: 21300000, guid: 7eadb9fdd3c24ce4fb80aeb4a4f81029, type: 3}
+      Clip: {fileID: 8300000, guid: 99da9bccf0b4d894da11f0696d4f5b16, type: 3}
+    - Bubble: {fileID: 21300000, guid: 7d9f27d83208ad44985a63c5be9c8cb4, type: 3}
+      Clip: {fileID: 8300000, guid: 9868f649250a6cf4392fc7469109eeb4, type: 3}
+    - Bubble: {fileID: 21300000, guid: 3a1a204ae68951648ac8020ba0c73c7a, type: 3}
+      Clip: {fileID: 8300000, guid: 8877ebf3e90bae944827ee17372f7474, type: 3}
+    - Bubble: {fileID: 21300000, guid: 6a139464048560e43909cf6784fbc6b3, type: 3}
+      Clip: {fileID: 8300000, guid: 319c18bf46108084f855f29efd377b21, type: 3}
+    - Bubble: {fileID: 21300000, guid: 24c4cab1d95f18548a5f3ae2630fcd34, type: 3}
+      Clip: {fileID: 8300000, guid: 9ee3c0627ca36c84fb5626a6a27203c4, type: 3}
+    - Bubble: {fileID: 0}
+      Clip: {fileID: 0}
+    - Bubble: {fileID: 21300000, guid: 6a6e088d1f252f5478d6fcaef5136061, type: 3}
+      Clip: {fileID: 8300000, guid: eeb74a0d02b46f942b0001b61cf117b1, type: 3}
+    - Bubble: {fileID: 21300000, guid: ca32f053a94f34a419c1bc9134884b84, type: 3}
+      Clip: {fileID: 8300000, guid: b0aac034ac5907b4fb872ea0dfad3a9b, type: 3}
+    - Bubble: {fileID: 21300000, guid: fe7add91d284be2439ab4b448c5a3b19, type: 3}
+      Clip: {fileID: 8300000, guid: d9e15c4028fa2f04d8dcd1f22ee66c91, type: 3}
+    - Bubble: {fileID: 21300000, guid: 31461a294ff721d44a5c405f2efbff2f, type: 3}
+      Clip: {fileID: 8300000, guid: 5e5f3b7919312dc47a57c22b7c6cb059, type: 3}
+    - Bubble: {fileID: 21300000, guid: 70d246bb20b10084ea578caace7def66, type: 3}
+      Clip: {fileID: 8300000, guid: bf4a5634d61dc9c4d9a037605d375c74, type: 3}
+    - Bubble: {fileID: 21300000, guid: 3fe74758ef4b72747bbb8d76ad8136f7, type: 3}
+      Clip: {fileID: 8300000, guid: 290956764d2321248a3381eb8ffd3a13, type: 3}
+    - Bubble: {fileID: 0}
+      Clip: {fileID: 0}
+    - Bubble: {fileID: 21300000, guid: 98dfa08e9cabb0847beb2cc79f237718, type: 3}
+      Clip: {fileID: 8300000, guid: d99667e628da818439a7bbca8adb4f33, type: 3}
+    - Bubble: {fileID: 0}
+      Clip: {fileID: 0}
+    - Bubble: {fileID: 21300000, guid: 32727a001f9c1e8468f0d669e567001e, type: 3}
+      Clip: {fileID: 8300000, guid: a7bea3be9a0e25b40964762dc693a720, type: 3}
+    - Bubble: {fileID: 0}
+      Clip: {fileID: 0}
+    - Bubble: {fileID: 21300000, guid: 4a5184e133a461a4e9bc20a350e19770, type: 3}
+      Clip: {fileID: 8300000, guid: 41c05f772d2665f498ad0acf33ca1fad, type: 3}
+    - Bubble: {fileID: 0}
+      Clip: {fileID: 0}
+    - Bubble: {fileID: 21300000, guid: e495eb2db68ae7945b6dd1583af2a9c0, type: 3}
+      Clip: {fileID: 8300000, guid: 8a6cc70f5578b6148aadd63a8aa2f1aa, type: 3}
+    AnyKeyToContinue: 1
+  - Lines:
+    - Bubble: {fileID: 21300000, guid: 69d0c2b2f92d2c54aaed22d24faa2793, type: 3}
+      Clip: {fileID: 8300000, guid: 0acf4f3b53b521d47bd46c64757e7eaf, type: 3}
+    AnyKeyToContinue: 0
+  - Lines:
+    - Bubble: {fileID: 21300000, guid: 075c8ce4592a13f47a99654f97a95178, type: 3}
+      Clip: {fileID: 8300000, guid: 1fb03fc6f00d9c745801b0061945f15a, type: 3}
+    AnyKeyToContinue: 0
+  - Lines:
+    - Bubble: {fileID: 21300000, guid: 88849198507648648b72897a9fb0ef03, type: 3}
+      Clip: {fileID: 8300000, guid: ecf426ea3e95ddd4eba568bb5644c4bf, type: 3}
+    AnyKeyToContinue: 0
+  - Lines:
+    - Bubble: {fileID: 21300000, guid: 7e1b102ba0bfd1b40a82a4445ae27a7c, type: 3}
+      Clip: {fileID: 8300000, guid: 51dc1605d8e85cc49b3538f1616a9274, type: 3}
+    AnyKeyToContinue: 0
+  - Lines:
+    - Bubble: {fileID: 21300000, guid: 1f441579e24a31143ab1ea616f4e6db8, type: 3}
+      Clip: {fileID: 8300000, guid: 52552eeeee6337c469b561a15b861837, type: 3}
+    AnyKeyToContinue: 0
+  - Lines:
+    - Bubble: {fileID: 21300000, guid: c86b6f90bad60a747a072f26e6442335, type: 3}
+      Clip: {fileID: 8300000, guid: 3c5a295b55eed8d4cb9409d624342a3b, type: 3}
+    AnyKeyToContinue: 0
+  - Lines:
+    - Bubble: {fileID: 21300000, guid: ecd7c64cbce1635479b7a95fb4e888a8, type: 3}
+      Clip: {fileID: 8300000, guid: 919e43609606e0944b6e853aec9788cc, type: 3}
+    AnyKeyToContinue: 0
+  - Lines:
+    - Bubble: {fileID: 21300000, guid: 9c63ec60a0d9cd544b53228db535e3ec, type: 3}
+      Clip: {fileID: 8300000, guid: 140710aa0de93ed4a87a0b8efcba74a1, type: 3}
+    AnyKeyToContinue: 0
+  - Lines:
+    - Bubble: {fileID: 21300000, guid: 3b1d9447caf08644cab463acb1fc1c37, type: 3}
+      Clip: {fileID: 8300000, guid: af58229f7886f984fa326d6e1df72ec1, type: 3}
+    AnyKeyToContinue: 0
+  - Lines:
+    - Bubble: {fileID: 21300000, guid: fec89a7847c0bac458303a26e6754840, type: 3}
+      Clip: {fileID: 8300000, guid: 35fdddd7cb9e0d64ab6d45936328a3a3, type: 3}
+    AnyKeyToContinue: 0
+  - Lines:
+    - Bubble: {fileID: 21300000, guid: e52f0b2f7e7cf924597ec81d549751e6, type: 3}
+      Clip: {fileID: 8300000, guid: f6d2dd0e7b454734283e4658ef6f378b, type: 3}
+    - Bubble: {fileID: 21300000, guid: 91c935867c6a6314cbbfb44a005237ec, type: 3}
+      Clip: {fileID: 8300000, guid: 48e5ed9e3793c1a46beee73935af19e6, type: 3}
+    - Bubble: {fileID: 21300000, guid: 0ec244cff6f624a41bb8a405950d8039, type: 3}
+      Clip: {fileID: 8300000, guid: 7e5cc2cc87fb6f84288e233660ff7bab, type: 3}
+    - Bubble: {fileID: 21300000, guid: f5e09094d87138449909d6ec8d0d7097, type: 3}
+      Clip: {fileID: 8300000, guid: 8afb60d40a276d849a8b6933ea529bd7, type: 3}
+    - Bubble: {fileID: 21300000, guid: 6340a620d3a44d340838d4f63664f4d7, type: 3}
+      Clip: {fileID: 8300000, guid: dd58d09dd41f73d4e82491eaefc2cceb, type: 3}
+    - Bubble: {fileID: 21300000, guid: 2ea78c52f0bc1b749976335b3c6e2fa0, type: 3}
+      Clip: {fileID: 8300000, guid: a3d822aeb7b214e47b40d9ad4ef0459f, type: 3}
+    - Bubble: {fileID: 21300000, guid: a47b1417f305c7c4e80d7b649f7456f8, type: 3}
+      Clip: {fileID: 8300000, guid: d26228ed73635344aacfa9bf333ceb15, type: 3}
+    - Bubble: {fileID: 21300000, guid: e8d37bfb7a6f15d42b0a72d25f6d43f7, type: 3}
+      Clip: {fileID: 8300000, guid: cd5308607d30eb64fa629c0371facf37, type: 3}
+    - Bubble: {fileID: 21300000, guid: f470c750fba22424594af8284acee6af, type: 3}
+      Clip: {fileID: 8300000, guid: 1476cb840af02a14e9b053655c36bf66, type: 3}
+    - Bubble: {fileID: 21300000, guid: d45caaf2933b1bc4d89eca61e1024633, type: 3}
+      Clip: {fileID: 8300000, guid: ffeaca0968b941e4cad1c3d7c994a825, type: 3}
+    - Bubble: {fileID: 21300000, guid: 1763c913a826e284cb9ae8087b073562, type: 3}
+      Clip: {fileID: 8300000, guid: cd400dd5e84e3a04481210ffc6352721, type: 3}
+    - Bubble: {fileID: 21300000, guid: 4f36aed7cd0bb25468126279cee41b33, type: 3}
+      Clip: {fileID: 8300000, guid: f6d2dd0e7b454734283e4658ef6f378b, type: 3}
+    - Bubble: {fileID: 21300000, guid: 8561a70589dff20498721703a1542104, type: 3}
+      Clip: {fileID: 8300000, guid: 743827b25450f96428af544d75c45c55, type: 3}
+    AnyKeyToContinue: 1

@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueManager : Singleton<DialogueManager>
 {
 
-	[NamedList(typeof(Dialogue))]
-	public DialogueData[] Dialogues;
+	public Image DialogueImage;
+	public AudioSource AudioSource;
+	public GameDialogues GameDialogues;
 
 	Queue<Dialogue> _dialogueQueue = new Queue<Dialogue>();
 	bool IsInDialogue;
@@ -28,7 +30,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
 		IsInDialogue = true;
 
-		var nextDialogue = Dialogues[(int)_dialogueQueue.Dequeue()];
+		var nextDialogue = GameDialogues.Dialogues[(int)_dialogueQueue.Dequeue()];
 		StartCoroutine(DoDialogue(nextDialogue));
 	}
 
@@ -42,21 +44,30 @@ public class DialogueManager : Singleton<DialogueManager>
 	{
 		IsInDialogue = true;
 
-		foreach (var item in dialogueData.Bubbles)
+		foreach (var line in dialogueData.Lines)
 		{
 			float t = 0;
-			item.SetActive(true);
-			var sound = item.GetComponent<AudioSource>();
 
-			while ((dialogueData.AnyKeyToContinue && !Input.anyKeyDown) || (!dialogueData.AnyKeyToContinue && t < DialogueMinTime))
+			DialogueImage.gameObject.SetActive(line.Bubble != null);
+			DialogueImage.sprite = line.Bubble;
+
+			if (line.Clip != null)
+			{
+				AudioSource.clip = line.Clip;
+				AudioSource.Play();
+			}
+
+			var usetimer = !dialogueData.AnyKeyToContinue || line.Bubble == null;
+			while ((!dialogueData.AnyKeyToContinue || !Input.anyKeyDown) && (!usetimer || t < DialogueMinTime))
 			{
 				yield return null;
 				t += Time.deltaTime;
 			}
+			
 			yield return null;
-
-			item.SetActive(false);
 		}
+
+		DialogueImage.gameObject.SetActive(false);
 		IsInDialogue = false;
 
 	}
@@ -64,7 +75,13 @@ public class DialogueManager : Singleton<DialogueManager>
 	[System.Serializable]
 	public struct DialogueData
 	{
-		public GameObject[] Bubbles;
+		public DialogueLineData[] Lines;
 		public bool AnyKeyToContinue;
+	}
+	[System.Serializable]
+	public struct DialogueLineData
+	{
+		public Sprite Bubble;
+		public AudioClip Clip;
 	}
 }
